@@ -1,0 +1,834 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Cómo llego</title>
+    <meta name="description" content="">
+
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="vendor/fonts/roboto.css" type="text/css">
+    <link rel="stylesheet" href="vendor/fonts/material-icons.css">
+    <!-- <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css"> -->
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
+    <link rel="stylesheet" href="vendor/mdl/material.css">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <div id="cl-loading" class="mdl-layout mdl-js-layout">
+      <main class="mdl-layout__content">
+        <img src="img/gcba.svg" alt="Buenos Aires Ciudad">
+      </main>
+    </div>
+
+    <div id="cl-onboard" class="mdl-layout mdl-js-layout">
+      <main class="mdl-layout__content">
+        <div class="onboard-details">
+          <i class="material-icons">place</i>
+          <h1>BA Cómo llego</h1>
+          <p>Consultá cómo viajar en la Ciudad de Buenos Aires y en el Gran Buenos Aires.</p>
+          <a>Empezar</a>
+        </div>
+      </main>
+    </div>
+
+    <div id="cl-favourites" class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row header-back">
+          <button class="mdl-button mdl-js-button mdl-button--icon js-favourites_close">
+            <i class="material-icons">arrow_back</i>
+          </button>
+          <span class="mdl-layout-title">Mis direcciones</span>
+        </div>
+      </header>
+
+      <main class="mdl-layout__content">
+        <section class="content-padding">
+          <div class="text-center">
+            <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored btn-block btn-with-icon js-map_trigger">
+              <i class="mdl-icon-toggle__label material-icons">star</i>
+              Ver direcciones en el mapa
+            </a>
+          </div>
+
+          <div class="vertical-spacer"></div>
+
+          <div class="pale-textfield no-margin-bottom fav-filter">
+            <label class="basic-label" for="favourites-search">Buscar en mis direcciones</label>
+            <input class="mdl-textfield__input" type="text" id="favourites-search" placeholder="Dirección o lugar">
+            <a class="mdl-button mdl-js-button mdl-button--icon js-favourites__clear">
+              <i class="material-icons">close</i>
+            </a>
+          </div>
+        </section>
+        <section class="fav-list">
+          <ul>
+            <li>
+              <a href="#" id="fav-1">
+                <span>Irigiyen, Bernardo de 272</span>
+                <small>CABA - Sin nombre</small>
+              </a>
+              <form action="#" class="fav-rename">
+                <div class="pale-textfield">
+                  <label class="basic-label" for="fav-rename">Cambiar nombre de dirección</label>
+                  <input class="mdl-textfield__input" type="text" id="fav-rename" placeholder="Nombre del lugar">
+                  <button class="mdl-button mdl-js-button mdl-button--raised js-fav-rename__cancel">
+                    Cancelar
+                  </button>
+                  <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored js-fav-rename__submit">
+                    Guardar
+                  </button>
+                </div>
+              </form>
+            </li>
+            <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="fav-1">
+              <li class="mdl-menu__item js-fav-from">Desde aquí</li>
+              <li class="mdl-menu__item js-fav-to">Hasta aquí</li>
+              <li class="mdl-menu__item js-fav-map">Ver en el mapa</li>
+              <li class="mdl-menu__item js-fav-rename">Cambiar nombre</li>
+              <hr>
+              <li class="mdl-menu__item">Borrar dirección</li>
+            </ul>
+            <li>
+              <a href="#" id="fav-2">
+                <span>Cabildo Av. y Juramento Av.</span>
+                <small>CABA - Sin nombre</small>
+              </a>
+              <form action="#" class="fav-rename">
+                <div class="pale-textfield">
+                  <label class="basic-label" for="fav-rename">Cambiar nombre de dirección</label>
+                  <input class="mdl-textfield__input" type="text" id="fav-rename" placeholder="Nombre del lugar">
+                  <button class="mdl-button mdl-js-button mdl-button--raised js-fav-rename__cancel">
+                    Cancelar
+                  </button>
+                  <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored js-fav-rename__submit">
+                    Guardar
+                  </button>
+                </div>
+              </form>
+            </li>
+            <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="fav-2">
+              <li class="mdl-menu__item js-fav-from">Desde aquí</li>
+              <li class="mdl-menu__item js-fav-to">Hasta aquí</li>
+              <li class="mdl-menu__item js-fav-map">Ver en el mapa</li>
+              <li class="mdl-menu__item js-fav-rename">Cambiar nombre</li>
+              <hr>
+              <li class="mdl-menu__item">Borrar dirección</li>
+            </ul>
+            <li>
+              <a href="#" id="fav-3">
+                <span>Melo 1601</span>
+                <small>Florida - Sin nombre</small>
+              </a>
+              <form action="#" class="fav-rename">
+                <div class="pale-textfield">
+                  <label class="basic-label" for="fav-rename">Cambiar nombre de dirección</label>
+                  <input class="mdl-textfield__input" type="text" id="fav-rename" placeholder="Nombre del lugar">
+                  <button class="mdl-button mdl-js-button mdl-button--raised js-fav-rename__cancel">
+                    Cancelar
+                  </button>
+                  <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored js-fav-rename__submit">
+                    Guardar
+                  </button>
+                </div>
+              </form>
+            </li>
+            <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="fav-3">
+              <li class="mdl-menu__item js-fav-from">Desde aquí</li>
+              <li class="mdl-menu__item js-fav-to">Hasta aquí</li>
+              <li class="mdl-menu__item js-fav-map">Ver en el mapa</li>
+              <li class="mdl-menu__item js-fav-rename">Cambiar nombre</li>
+              <hr>
+              <li class="mdl-menu__item">Borrar dirección</li>
+            </ul>
+            <li>
+              <a href="#" id="fav-4">
+                <span>Conesa y Newbery, Jorge</span>
+                <small>CABA - Casa</small>
+              </a>
+              <form action="#" class="fav-rename">
+                <div class="pale-textfield">
+                  <label class="basic-label" for="fav-rename">Cambiar nombre de dirección</label>
+                  <input class="mdl-textfield__input" type="text" id="fav-rename" placeholder="Nombre del lugar">
+                  <button class="mdl-button mdl-js-button mdl-button--raised js-fav-rename__cancel">
+                    Cancelar
+                  </button>
+                  <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored js-fav-rename__submit">
+                    Guardar
+                  </button>
+                </div>
+              </form>
+            </li>
+            <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="fav-4">
+              <li class="mdl-menu__item js-fav-from">Desde aquí</li>
+              <li class="mdl-menu__item js-fav-to">Hasta aquí</li>
+              <li class="mdl-menu__item js-fav-map">Ver en el mapa</li>
+              <li class="mdl-menu__item js-fav-rename">Cambiar nombre</li>
+              <hr>
+              <li class="mdl-menu__item">Borrar dirección</li>
+            </ul>
+            <li>
+              <a href="#" id="fav-5">
+                <span>Irigiyen, Bernardo de 272</span>
+                <small>CABA - Sin nombre</small>
+              </a>
+              <form action="#" class="fav-rename">
+                <div class="pale-textfield">
+                  <label class="basic-label" for="fav-rename">Cambiar nombre de dirección</label>
+                  <input class="mdl-textfield__input" type="text" id="fav-rename" placeholder="Nombre del lugar">
+                  <button class="mdl-button mdl-js-button mdl-button--raised js-fav-rename__cancel">
+                    Cancelar
+                  </button>
+                  <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored js-fav-rename__submit">
+                    Guardar
+                  </button>
+                </div>
+              </form>
+            </li>
+            <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="fav-5">
+              <li class="mdl-menu__item js-fav-from">Desde aquí</li>
+              <li class="mdl-menu__item js-fav-to">Hasta aquí</li>
+              <li class="mdl-menu__item js-fav-map">Ver en el mapa</li>
+              <li class="mdl-menu__item js-fav-rename">Cambiar nombre</li>
+              <hr>
+              <li class="mdl-menu__item">Borrar dirección</li>
+            </ul>
+            <li>
+              <a href="#" id="fav-6">
+                <span>Cabildo Av. y Juramento Av.</span>
+                <small>CABA - Sin nombre</small>
+              </a>
+              <form action="#" class="fav-rename">
+                <div class="pale-textfield">
+                  <label class="basic-label" for="fav-rename">Cambiar nombre de dirección</label>
+                  <input class="mdl-textfield__input" type="text" id="fav-rename" placeholder="Nombre del lugar">
+                  <button class="mdl-button mdl-js-button mdl-button--raised js-fav-rename__cancel">
+                    Cancelar
+                  </button>
+                  <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored js-fav-rename__submit">
+                    Guardar
+                  </button>
+                </div>
+              </form>
+            </li>
+            <ul class="mdl-menu mdl-menu--top-left mdl-js-menu mdl-js-ripple-effect" for="fav-6">
+              <li class="mdl-menu__item js-fav-from">Desde aquí</li>
+              <li class="mdl-menu__item js-fav-to">Hasta aquí</li>
+              <li class="mdl-menu__item js-fav-map">Ver en el mapa</li>
+              <li class="mdl-menu__item js-fav-rename">Cambiar nombre</li>
+              <hr>
+              <li class="mdl-menu__item">Borrar dirección</li>
+            </ul>
+            <li>
+              <a href="#" id="fav-7">
+                <span>Melo 1601</span>
+                <small>Florida - Sin nombre</small>
+              </a>
+              <form action="#" class="fav-rename">
+                <div class="pale-textfield">
+                  <label class="basic-label" for="fav-rename">Cambiar nombre de dirección</label>
+                  <input class="mdl-textfield__input" type="text" id="fav-rename" placeholder="Nombre del lugar">
+                  <button class="mdl-button mdl-js-button mdl-button--raised js-fav-rename__cancel">
+                    Cancelar
+                  </button>
+                  <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored js-fav-rename__submit">
+                    Guardar
+                  </button>
+                </div>
+              </form>
+            </li>
+            <ul class="mdl-menu mdl-menu--top-left mdl-js-menu mdl-js-ripple-effect" for="fav-7">
+              <li class="mdl-menu__item js-fav-from">Desde aquí</li>
+              <li class="mdl-menu__item js-fav-to">Hasta aquí</li>
+              <li class="mdl-menu__item js-fav-map">Ver en el mapa</li>
+              <li class="mdl-menu__item js-fav-rename">Cambiar nombre</li>
+              <hr>
+              <li class="mdl-menu__item">Borrar dirección</li>
+            </ul>
+            <li>
+              <a href="#" id="fav-8">
+                <span>Conesa y Newbery, Jorge</span>
+                <small>CABA - Casa</small>
+              </a>
+              <form action="#" class="fav-rename">
+                <div class="pale-textfield">
+                  <label class="basic-label" for="fav-rename">Cambiar nombre de dirección</label>
+                  <input class="mdl-textfield__input" type="text" id="fav-rename" placeholder="Nombre del lugar">
+                  <button class="mdl-button mdl-js-button mdl-button--raised js-fav-rename__cancel">
+                    Cancelar
+                  </button>
+                  <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored js-fav-rename__submit">
+                    Guardar
+                  </button>
+                </div>
+              </form>
+            </li>
+            <ul class="mdl-menu mdl-menu--top-left mdl-js-menu mdl-js-ripple-effect" for="fav-8">
+              <li class="mdl-menu__item js-fav-from">Desde aquí</li>
+              <li class="mdl-menu__item js-fav-to">Hasta aquí</li>
+              <li class="mdl-menu__item js-fav-map">Ver en el mapa</li>
+              <li class="mdl-menu__item js-fav-rename">Cambiar nombre</li>
+              <hr>
+              <li class="mdl-menu__item">Borrar dirección</li>
+            </ul>
+          </ul>
+          <div class="content-padding text-center">
+            <button class="mdl-button btn-danger btn-block" id="delete-favourites">
+              Borrar todas mis direcciones
+            </button>
+            <ul class="mdl-menu mdl-menu--top-left mdl-js-menu mdl-js-ripple-effect" for="delete-favourites">
+              <li class="mdl-menu__item js-fav-clear">Borrar</li>
+              <li class="mdl-menu__item">Cancerlar</li>
+            </ul>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div id="cl-history" class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row header-back">
+          <button class="mdl-button mdl-js-button mdl-button--icon js-history_close">
+            <i class="material-icons">arrow_back</i>
+          </button>
+          <span class="mdl-layout-title">Historial de recorridos</span>
+        </div>
+      </header>
+
+      <main class="mdl-layout__content">
+        <section class="history-list">
+          <ul>
+            <li>
+              <a href="#" id="history-1">
+                <i class="mdl-icon-toggle__label material-icons">directions_bus</i>
+                <div>
+                  <small>Desde <time class="pull-right">24/11</time></small>
+                  <span>Irigiyen, Bernardo de 272</span>
+                  <small>Hasta</small>
+                  <span>Melo 1601</span>
+                </div>
+              </a>
+            </li>
+            <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="history-1">
+              <li class="mdl-menu__item js-history-repeat">Repetir recorrido</li>
+              <li class="mdl-menu__item">Borrar recorrido</li>
+            </ul>
+            <li>
+              <a href="#" id="history-2">
+                <i class="mdl-icon-toggle__label material-icons">directions_car</i>
+                <div>
+                  <small>Desde <time class="pull-right">24/11</time></small>
+                  <span>Cabildo Av. y Juramento Av.</span>
+                  <small>Hasta</small>
+                  <span>Conesa y Newbery, Jorge</span>
+                </div>
+              </a>
+            </li>
+            <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="history-2">
+              <li class="mdl-menu__item js-history-repeat">Repetir recorrido</li>
+              <li class="mdl-menu__item">Borrar recorrido</li>
+            </ul>
+            <li>
+              <a href="#" id="history-3">
+                <i class="mdl-icon-toggle__label material-icons">directions_walk</i>
+                <div>
+                  <small>Desde <time class="pull-right">22/11</time></small>
+                  <span>Conesa y Newbery, Jorge</span>
+                  <small>Hasta</small>
+                  <span>Cabildo Av. y Juramento Av.</span>
+                </div>
+              </a>
+            </li>
+            <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="history-3">
+              <li class="mdl-menu__item js-history-repeat">Repetir recorrido</li>
+              <li class="mdl-menu__item">Borrar recorrido</li>
+            </ul>
+            <li>
+              <a href="#" id="history-4">
+                <i class="mdl-icon-toggle__label material-icons">directions_bike</i>
+                <div>
+                  <small>Desde <time class="pull-right">23/11</time></small>
+                  <span>Irigiyen, Bernardo de 272</span>
+                  <small>Hasta</small>
+                  <span>Cabildo Av. y Juramento Av.</span>
+                </div>
+              </a>
+            </li>
+            <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="history-4">
+              <li class="mdl-menu__item js-history-repeat">Repetir recorrido</li>
+              <li class="mdl-menu__item">Borrar recorrido</li>
+            </ul>
+            <li>
+              <a href="#" id="history-5">
+                <i class="mdl-icon-toggle__label material-icons">directions_bus</i>
+                <div>
+                  <small>Desde <time class="pull-right">15/11</time></small>
+                  <span>Irigiyen, Bernardo de 272</span>
+                  <small>Hasta</small>
+                  <span>Melo 1601</span>
+                </div>
+              </a>
+            </li>
+            <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="history-5">
+              <li class="mdl-menu__item js-history-repeat">Repetir recorrido</li>
+              <li class="mdl-menu__item">Borrar recorrido</li>
+            </ul>
+            <li>
+              <a href="#" id="history-6">
+                <i class="mdl-icon-toggle__label material-icons">directions_car</i>
+                <div>
+                  <small>Desde <time class="pull-right">14/11</time></small>
+                  <span>Cabildo Av. y Juramento Av.</span>
+                  <small>Hasta</small>
+                  <span>Conesa y Newbery, Jorge</span>
+                </div>
+              </a>
+            </li>
+            <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="history-6">
+              <li class="mdl-menu__item js-history-repeat">Repetir recorrido</li>
+              <li class="mdl-menu__item">Borrar recorrido</li>
+            </ul>
+            <li>
+              <a href="#" id="history-7">
+                <i class="mdl-icon-toggle__label material-icons">directions_walk</i>
+                <div>
+                  <small>Desde <time class="pull-right">3/11</time></small>
+                  <span>Conesa y Newbery, Jorge</span>
+                  <small>Hasta</small>
+                  <span>Cabildo Av. y Juramento Av.</span>
+                </div>
+              </a>
+            </li>
+            <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="history-7">
+              <li class="mdl-menu__item js-history-repeat">Repetir recorrido</li>
+              <li class="mdl-menu__item">Borrar recorrido</li>
+            </ul>
+            <li>
+              <a href="#" id="history-8">
+                <i class="mdl-icon-toggle__label material-icons">directions_bike</i>
+                <div>
+                  <small>Desde <time class="pull-right">2/10</time></small>
+                  <span>Irigiyen, Bernardo de 272</span>
+                  <small>Hasta</small>
+                  <span>Cabildo Av. y Juramento Av.</span>
+                </div>
+              </a>
+            </li>
+            <ul class="mdl-menu mdl-menu--top-left mdl-js-menu mdl-js-ripple-effect" for="history-8">
+              <li class="mdl-menu__item js-history-repeat">Repetir recorrido</li>
+              <li class="mdl-menu__item">Borrar recorrido</li>
+            </ul>
+          </ul>
+          <div class="content-padding text-center">
+            <button class="mdl-button btn-danger btn-block" id="delete-history">
+              Borrar todos los recorridos
+            </button>
+            <ul class="mdl-menu mdl-menu--top-left mdl-js-menu mdl-js-ripple-effect" for="delete-history">
+              <li class="mdl-menu__item js-history-clear">Borrar</li>
+              <li class="mdl-menu__item">Cancerlar</li>
+            </ul>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div id="cl-info" class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row header-back">
+          <button class="mdl-button mdl-js-button mdl-button--icon js-info_close">
+            <i class="material-icons">arrow_back</i>
+          </button>
+          <span class="mdl-layout-title">Acerca de esta aplicación</span>
+        </div>
+      </header>
+
+      <main class="mdl-layout__content">
+        <section class="content-padding double-padding-top text-center">
+          <h1>BA Cómo llego</h1>
+          <p class="color-gray">Versión 4.5</p>
+          <img src="img/sello-evoluciona.svg" alt="Evoluciona" width="200" height="200">
+
+          <button class="mdl-button mdl-js-button mdl-button--raised btn-white btn-block">
+            Descargá más aplicaciones
+          </button>
+        </section>
+      </main>
+    </div>
+
+    <div id="cl-map" class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header header-back">
+        <div class="mdl-layout__header-row header-back">
+          <button class="mdl-button mdl-js-button mdl-button--icon js-map_close">
+            <i class="material-icons">arrow_back</i>
+          </button>
+
+          <div class="mdl-layout-spacer"></div>
+
+          <button class="mdl-button mdl-js-button mdl-button--icon js-mapsearch_trigger">
+            <i class="material-icons">search</i>
+          </button>
+          <button class="mdl-button mdl-js-button mdl-button--icon">
+            <i class="material-icons">share</i>
+          </button>
+          <button id="layers-trigger" class="mdl-button mdl-js-button mdl-button--icon">
+            <i class="material-icons">layers</i>
+          </button>
+          <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="layers-trigger">
+              <li class="mdl-menu__item"><i class="material-icons">payment</i> Carga de SUBE</li>
+              <li class="mdl-menu__item"><i class="material-icons">directions_bike</i> Red de bicisendas</li>
+              <li class="mdl-menu__item"><i class="material-icons">local_atm</i> Cajeros automáticos</li>
+              <li class="mdl-menu__item"><i class="material-icons">traffic</i> Cortes de tránsito</li>
+              <li class="mdl-menu__item"><i class="material-icons">local_gas_station</i> Estaciones de servicio</li>
+              <hr>
+              <li class="mdl-menu__item"><i class="material-icons">star</i> Mostrar mis direcciones</li>
+            </ul>
+        </div>
+      </header>
+      <div class="map-search">
+        <header class="mdl-layout__header mdl-layout__header-search">
+          <div class="mdl-layout__header-row header-back">
+            <button class="mdl-button mdl-js-button mdl-button--icon js-mapsearch_close">
+              <i class="material-icons">arrow_back</i>
+            </button>
+
+            <input type="text" placeholder="Buscar dirección o lugar" class="map-search__input">
+
+            <button class="mdl-button mdl-js-button mdl-button--icon js-mapsearch_clear">
+              <i class="material-icons">close</i>
+            </button>
+          </div>
+        </header>
+        <div class="search-scroll">
+          <div class="location-autocomplete">
+            <small>Mis direcciones</small>
+            <div id="ac-input-target" class="opciones_autocomplete">
+              <div class="content">
+                <ul class="options">
+                  <li><a href="#" name="ac-input-target0"><span class="tl"></span><span class="tr"></span><i class="material-icons">star</i><span>Irigoyen, <em>Bernar</em>do De 272</span><span class="clase">Mis Direcciones</span></a></li>
+                  <li><a href="#" name="ac-input-target1"><span class="tl"></span><span class="tr"></span><i class="material-icons">star</i><span><em>Bernar</em>di, Conscripto</span><span class="clase">Ciudad Autónoma de Buenos Aires</span></a></li>
+                  <li><a href="#" name="ac-input-target2"><span class="tl"></span><span class="tr"></span><i class="material-icons">star</i><span>Irigoyen, <em>Bernar</em>do De</span><span class="clase">Ciudad Autónoma de Buenos Aires</span></a></li>
+                  <li><a href="#" name="ac-input-target3"><span class="tl"></span><span class="tr"></span><i class="material-icons">star</i><span>Leon, <em>Bernar</em>do De</span><span class="clase">Ciudad Autónoma de Buenos Aires</span></a></li>
+                  <li><a href="#" name="ac-input-target4"><span class="tl"></span><span class="tr"></span><i class="material-icons">star</i><span>Velez, <em>Bernar</em>do, Dr.</span><span class="clase">Ciudad Autónoma de Buenos Aires</span></a></li>
+                  <li><a href="#" name="ac-input-target5"><span class="tl"></span><span class="tr"></span><i class="material-icons">star</i><span>Conscripto <em>Bernar</em>di</span><span class="clase">Adrogué, Almirante Brown</span></a></li>
+                  <li><a href="#" name="ac-input-target6"><span class="tl"></span><span class="tr"></span><i class="material-icons">star</i><span>Diagonal Juan B. Toll y <em>Bernar</em>det</span><span class="clase">Adrogué, Almirante Brown</span></a></li>
+                  <li><a href="#" name="ac-input-target0"><span class="tl"></span><span class="tr"></span><i class="material-icons">star</i><span>Irigoyen, <em>Bernar</em>do De 272</span><span class="clase">Mis Direcciones</span></a></li>
+                  <li><a href="#" name="ac-input-target1"><span class="tl"></span><span class="tr"></span><i class="material-icons">star</i><span><em>Bernar</em>di, Conscripto</span><span class="clase">Ciudad Autónoma de Buenos Aires</span></a></li>
+                  <li><a href="#" name="ac-input-target2"><span class="tl"></span><span class="tr"></span><i class="material-icons">star</i><span>Irigoyen, <em>Bernar</em>do De</span><span class="clase">Ciudad Autónoma de Buenos Aires</span></a></li>
+                  <li><a href="#" name="ac-input-target3"><span class="tl"></span><span class="tr"></span><i class="material-icons">star</i><span>Leon, <em>Bernar</em>do De</span><span class="clase">Ciudad Autónoma de Buenos Aires</span></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <main class="mdl-layout__content">
+        <section class="map-container">
+          <iframe class="img-rounded" src="http://epok.buenosaires.gob.ar/pub/mapa/usig/barrios/" name="Mapa de Obras y Desvíos" scrolling="no" frameborder="0"></iframe>
+          <button class="mdl-button mdl-js-button mdl-button--fab location-button active">
+            <i class="material-icons">my_location</i>
+          </button>
+          <div class="locator show"></div>
+          <div class="map-marker hidden">
+            <div class="leaflet-marker-pane">
+              <img src="img/marker.svg" class="leaflet-marker-icon leaflet-zoom-animated leaflet-clickable" tabindex="0" width="50" height="55">
+            </div>
+            <div class="leaflet-popup-pane">
+              <div class="leaflet-popup marker-menu-popup leaflet-zoom-animated">
+                <a class="leaflet-popup-close-button material-icons" href="#close">close</a>
+                  <div class="leaflet-popup-content-wrapper">
+                    <div class="leaflet-popup-content">
+                      <div class="title"> Gascon 1301 - 1400 </div>
+                      <div class="dropdown">
+                          <ul class="dropdown-menu no-border marker-menu" role="menu" data-latlng="-34.5947805932873,-58.422889709472656" data-desc="Gascon 1301 - 1400" data-marker-class="context" data-marker-id="-2" aria-labelledby="dropdownMenu">
+                              <li><a tabindex="-1" href="#" data-action="DESDE_AQUI" data-broadcast="true" class="js-map-from">Desde aquí</a></li>
+                              <li><a tabindex="-1" href="#" data-action="HASTA_AQUI" data-broadcast="true" class="js-map-to">Hasta aquí</a></li>
+                              <hr>
+                              <li><a tabindex="-1" href="#" data-action="VER_INFORMACION" data-broadcast="false">Borrar dirección</a></li>                
+                          </ul>
+                      </div>
+                    </div>
+                  </div>
+                <div class="leaflet-popup-tip-container">
+                  <div class="leaflet-popup-tip"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div id="cl-autocomplete" class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <div class="map-search autocomplete-from">
+        <header class="mdl-layout__header mdl-layout__header-search">
+          <div class="mdl-layout__header-row header-back">
+            <button class="mdl-button mdl-js-button mdl-button--icon js-autocomplete_close">
+              <i class="material-icons">arrow_back</i>
+            </button>
+            <div>
+              <label for="autocomplete-form">Desde</label>
+              <input type="text" id="autocomplete-from" placeholder="Buscar dirección o lugar" class="map-search__input">
+            </div>
+            <button class="mdl-button mdl-js-button mdl-button--icon js-autocomplete_clear">
+              <i class="material-icons">close</i>
+            </button>
+          </div>
+        </header>
+        <div class="search-scroll">
+          <div class="location-autocomplete">
+            <div id="autocomplete-from__container"></div>
+            <div class="autocomplete__favs">
+              <a class="autocomplete-from__gps"><i class="material-icons">my_location</i><span>Mi ubicación</span></a>
+              <hr>
+              <small>Mis direcciones</small>
+              <div id="ac-input-target" class="opciones_autocomplete">
+                <div class="content">
+                  <ul class="options">
+                    <li><a href="#" name="ac-input-target0"><span class="tl"></span><span class="tr"></span><i class="material-icons">star</i><span>Irigoyen, <em>Bernar</em>do De 272</span><span class="clase">Mis Direcciones</span></a></li>
+                    <li><a href="#" name="ac-input-target1"><span class="tl"></span><span class="tr"></span><i class="material-icons">star</i><span><em>Bernar</em>di, Conscripto</span><span class="clase">Ciudad Autónoma de Buenos Aires</span></a></li>
+                    <li><a href="#" name="ac-input-target2"><span class="tl"></span><span class="tr"></span><i class="material-icons">star</i><span>Irigoyen, <em>Bernar</em>do De</span><span class="clase">Ciudad Autónoma de Buenos Aires</span></a></li>
+                    <li><a href="#" name="ac-input-target3"><span class="tl"></span><span class="tr"></span><i class="material-icons">star</i><span>Leon, <em>Bernar</em>do De</span><span class="clase">Ciudad Autónoma de Buenos Aires</span></a></li>
+                    <li><a href="#" name="ac-input-target4"><span class="tl"></span><span class="tr"></span><i class="material-icons">star</i><span>Velez, <em>Bernar</em>do, Dr.</span><span class="clase">Ciudad Autónoma de Buenos Aires</span></a></li>
+                    <li><a href="#" name="ac-input-target5"><span class="tl"></span><span class="tr"></span><i class="material-icons">star</i><span>Conscripto <em>Bernar</em>di</span><span class="clase">Adrogué, Almirante Brown</span></a></li>
+                    <li><a href="#" name="ac-input-target6"><span class="tl"></span><span class="tr"></span><i class="material-icons">star</i><span>Diagonal Juan B. Toll y <em>Bernar</em>det</span><span class="clase">Adrogué, Almirante Brown</span></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="map-search autocomplete-to">
+        <header class="mdl-layout__header mdl-layout__header-search">
+          <div class="mdl-layout__header-row header-back">
+            <button class="mdl-button mdl-js-button mdl-button--icon js-autocomplete_close">
+              <i class="material-icons">arrow_back</i>
+            </button>
+            <div>
+              <label for="autocomplete-to">Hasta</label>
+              <input type="text" id="autocomplete-to" placeholder="Buscar dirección o lugar" class="map-search__input">
+            </div>
+            <button class="mdl-button mdl-js-button mdl-button--icon js-autocomplete_clear">
+              <i class="material-icons">close</i>
+            </button>
+          </div>
+        </header>
+        <div class="search-scroll">
+          <div class="location-autocomplete">
+            <div id="autocomplete-to__container"></div>
+            <div class="autocomplete__favs">
+              <a class="autocomplete-to__gps"><i class="material-icons">my_location</i><span>Mi ubicación</span></a>
+              <hr>
+              <small>Mis direcciones</small>
+              <div class="opciones_autocomplete">
+                <div class="content">
+                  <ul class="options">
+                    <li><a href="#" name="ac-input-target0"><span class="tl"></span><span class="tr"></span><i class="material-icons">star</i><span>Irigoyen, <em>Bernar</em>do De 272</span><span class="clase">Mis Direcciones</span></a></li>
+                    <li><a href="#" name="ac-input-target1"><span class="tl"></span><span class="tr"></span><i class="material-icons">star</i><span><em>Bernar</em>di, Conscripto</span><span class="clase">Ciudad Autónoma de Buenos Aires</span></a></li>
+                    <li><a href="#" name="ac-input-target2"><span class="tl"></span><span class="tr"></span><i class="material-icons">star</i><span>Irigoyen, <em>Bernar</em>do De</span><span class="clase">Ciudad Autónoma de Buenos Aires</span></a></li>
+                    <li><a href="#" name="ac-input-target3"><span class="tl"></span><span class="tr"></span><i class="material-icons">star</i><span>Leon, <em>Bernar</em>do De</span><span class="clase">Ciudad Autónoma de Buenos Aires</span></a></li>
+                    <li><a href="#" name="ac-input-target4"><span class="tl"></span><span class="tr"></span><i class="material-icons">star</i><span>Velez, <em>Bernar</em>do, Dr.</span><span class="clase">Ciudad Autónoma de Buenos Aires</span></a></li>
+                    <li><a href="#" name="ac-input-target5"><span class="tl"></span><span class="tr"></span><i class="material-icons">star</i><span>Conscripto <em>Bernar</em>di</span><span class="clase">Adrogué, Almirante Brown</span></a></li>
+                    <li><a href="#" name="ac-input-target6"><span class="tl"></span><span class="tr"></span><i class="material-icons">star</i><span>Diagonal Juan B. Toll y <em>Bernar</em>det</span><span class="clase">Adrogué, Almirante Brown</span></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="cl-form" class="mdl-layout mdl-js-layout mdl-layout--fixed-header hidden">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <!-- Title -->
+          <span class="mdl-layout-title"><!--BA -->Cómo llego</span>
+          <!-- Add spacer, to align navigation to the right -->
+          <div class="mdl-layout-spacer"></div>
+          <!-- Navigation. We hide it in small screens. -->
+
+          <button class="mdl-button mdl-js-button mdl-button--icon js-history_trigger">
+            <i class="material-icons">history</i>
+          </button>
+          <button class="mdl-button mdl-js-button mdl-button--icon js-favourites_trigger">
+            <i class="material-icons">star</i>
+          </button>
+          <button class="mdl-button mdl-js-button mdl-button--icon js-map_trigger">
+            <i class="material-icons">place</i>
+          </button>
+        </div>
+      </header>
+
+      <main class="mdl-layout__content">
+        <section class="content-padding no-padding-bottom no-padding-right">
+          <form action="#" class="trip-form">
+            
+            <div class="trip-form__row">
+              <div class="trip-form__fields">
+                <label class="basic-label">Transporte</label>
+                <div class="button-toggle">
+                  <label for="trip-walk">
+                    <input type="radio" name="trip-selector" id="trip-walk" class="mdl-icon-toggle__input" value="walk">
+                    <span class="mdl-button mdl-js-button mdl-button--raised">
+                      <i class="mdl-icon-toggle__label material-icons">directions_walk</i>
+                    </span>
+                  </label>
+                  <label for="trip-bike">
+                    <input type="radio" name="trip-selector" id="trip-bike" class="mdl-icon-toggle__input" value="bike">
+                    <span class="mdl-button mdl-js-button mdl-button--raised">
+                      <i class="mdl-icon-toggle__label material-icons">directions_bike</i>
+                    </span>
+                  </label>
+                  <label for="trip-bus">
+                    <input type="radio" name="trip-selector" id="trip-bus" class="mdl-icon-toggle__input" value="bus" checked>
+                    <span class="mdl-button mdl-js-button mdl-button--raised">
+                      <i class="mdl-icon-toggle__label material-icons">directions_bus</i>
+                    </span>
+                  </label>
+                  <label for="trip-car">
+                    <input type="radio" name="trip-selector" id="trip-car" class="mdl-icon-toggle__input" value="car">
+                    <span class="mdl-button mdl-js-button mdl-button--raised">
+                      <i class="mdl-icon-toggle__label material-icons">directions_car</i>
+                    </span>
+                  </label>
+                </div>
+              </div>
+              <div class="trip-form__action">
+                <div class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored js-trip_options">
+                  <i class="material-icons">expand_more</i>
+                </div>
+              </div>
+            </div>
+
+            <div class="trip-settings">
+              <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="config-bus">
+                <input type="checkbox" id="config-bus" class="mdl-checkbox__input" checked>
+                <span class="mdl-checkbox__label">Recorridos en colectivo</span>
+              </label>
+              <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="config-subway">
+                <input type="checkbox" id="config-subway" class="mdl-checkbox__input" checked>
+                <span class="mdl-checkbox__label">Recorridos en subte</span>
+              </label>
+              <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="config-train">
+                <input type="checkbox" id="config-train" class="mdl-checkbox__input" checked>
+                <span class="mdl-checkbox__label">Recorridos en tren</span>
+              </label>
+              <label for="" class="basic-label">Caminata máxima: <span class="walkMax">800</span> metros</label>
+              <input class="mdl-slider mdl-js-slider" id="config-walk" type="range" min="200" max="1200" value="800" step="100" tabindex="0">
+              <hr>
+            </div>
+
+            <div class="trip-form__row">
+              <div class="trip-form__fields">
+                <div class="pale-textfield">
+                  <label class="basic-label" for="trip-from">Desde</label>
+                  <input class="mdl-textfield__input" type="text" id="trip-from" placeholder="Calle, altura y localidad (opcional)" value="" autocomplete="off">
+                  <div class="gps-loading">
+                    <div class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active"></div>
+                    <span>Buscando ubicación actual...</span>
+                  </div>
+                </div>
+                <div class="pale-textfield">
+                  <label class="basic-label" for="trip-to">Hasta</label>
+                  <input class="mdl-textfield__input" type="text" id="trip-to" placeholder="Calle, altura y localidad (opcional)" autocomplete="off">
+                  <div class="gps-loading">
+                    <div class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active"></div>
+                    <span>Buscando ubicación actual...</span>
+                  </div>
+                </div>
+              </div>
+              <div class="trip-form__action">
+                <div class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
+                  <i class="material-icons">swap_vert</i>
+                </div>
+              </div>
+            </div>
+          </form>
+          <label class="basic-label">Recorridos</label>
+        </section>
+        <section class="results blank not-selectable">
+          <div class="results__blank-message">
+            <div class="blank-message__icons">
+              <i class="material-icons">place</i>
+              <i class="material-icons">more_horiz</i>
+              <i class="material-icons">directions_bus</i>
+              <i class="material-icons">more_horiz</i>
+              <i class="material-icons">place</i>
+            </div>
+            <p>Buscá desde donde salís y hasta donde querés ir para ver cómo llegar en transporte público (colectivo, subte y tren).</p>
+            <p>
+              <a class="mdl-button mdl-js-button js-info_trigger">
+                <i class="material-icons">info_outline</i> &nbsp;
+                Sobre la aplicación
+              </a>
+            </p>
+          </div>
+          <div class="results__loading">
+            <div class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active"></div>
+            <span>Buscando recorridos</span>
+          </div>
+          <div class="results-items">
+            <!-- <div class="results__item open">
+              <header>
+                <div class="item__trip">
+                  <div class="train-icon" title="Ferrocarril Bartolomé Mitre">FCGBM</div>
+                  <i class="material-icons">chevron_right</i>
+                  <div class="bus-icon bus-icon__60"><div class="colors"></div></div>
+                  <i class="material-icons">chevron_right</i>
+                  <div class="subway-icon subway-icon__a"></div>
+                </div>
+                <div class="mdl-layout-spacer"></div>
+                <time>16 min</time>
+                <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
+                  <i class="material-icons">expand_more</i>
+                </button>
+              </header>
+              <div class="item__details">
+                <ul>
+                  <li>
+                    <i class="mdl-icon-toggle__label material-icons">directions_walk</i>
+                    <div>Caminar desde <strong>Echeverría 2500</strong> hasta <strong>Cabildo Av. y Echeverría</strong></div>
+                  </li>
+                  <li>
+                    <i class="mdl-icon-toggle__label material-icons">directions_bus</i>
+                    <div>Tomar el <strong>Colectivo 166</strong> y bajar en <strong>Álvarez, Julián y Drago, Luis María</strong></div>
+                  </li>
+                  <li>
+                    <i class="mdl-icon-toggle__label material-icons">directions_subway</i>
+                    <div>Tomar el <strong>subte línea D (en dirección a Leando N. Alem)</strong> en la estación <strong>Federico Lacroze</strong> en <strong>Guzmán Av. y Lacroze, Federico Av.</strong></div>
+                  </li>
+                </ul>
+                <div class="item__action">
+                  <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored btn-block btn-with-icon" href="#">
+                    <i class="mdl-icon-toggle__label material-icons">place</i>
+                    Ver recorrido en el mapa
+                  </a>
+                </div>
+              </div>
+            </div> -->
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="vendor/mdl/material.min.js"></script>
+    <script src="vendor/jquery-1.11.3.min.js"></script>
+    <script src="vendor/jquery.mobile-events.min.js"></script>
+    <script src="vendor/usig/usig.AutoCompleterFull.min.js"></script>
+    <script src="vendor/usig/usig.Recorridos.min.js"></script>
+    <script src="vendor/usig/usig.GeoCoder.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
