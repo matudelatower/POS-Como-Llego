@@ -501,31 +501,34 @@
               <i class="material-icons">arrow_back</i>
             </button>
 
-            <input type="text" placeholder="Buscar dirección o lugar" class="map-search__input">
+            <input type="text" placeholder="Buscar dirección o lugar" class="map-search__input" id="autocomplete-map">
 
             <button class="mdl-button mdl-js-button mdl-button--icon js-mapsearch_clear">
               <i class="material-icons">close</i>
             </button>
           </div>
         </header>
-        <div class="search-scroll">
+        <div class="search-scroll autocomplete-map">
           <div class="location-autocomplete">
-            <small>Mis direcciones</small>
-            <div id="ac-input-target" class="opciones_autocomplete">
-              <div class="content">
-                <ul class="options">
-                  <li><a href="#" name="ac-input-target0"><span class="tl"></span><span class="tr"></span><i class="material-icons">star</i><span>Irigoyen, <em>Bernar</em>do De 272</span><span class="clase">Mis Direcciones</span></a></li>
-                  <li><a href="#" name="ac-input-target1"><span class="tl"></span><span class="tr"></span><i class="material-icons">star</i><span><em>Bernar</em>di, Conscripto</span><span class="clase">Ciudad Autónoma de Buenos Aires</span></a></li>
-                  <li><a href="#" name="ac-input-target2"><span class="tl"></span><span class="tr"></span><i class="material-icons">star</i><span>Irigoyen, <em>Bernar</em>do De</span><span class="clase">Ciudad Autónoma de Buenos Aires</span></a></li>
-                  <li><a href="#" name="ac-input-target3"><span class="tl"></span><span class="tr"></span><i class="material-icons">star</i><span>Leon, <em>Bernar</em>do De</span><span class="clase">Ciudad Autónoma de Buenos Aires</span></a></li>
-                  <li><a href="#" name="ac-input-target4"><span class="tl"></span><span class="tr"></span><i class="material-icons">star</i><span>Velez, <em>Bernar</em>do, Dr.</span><span class="clase">Ciudad Autónoma de Buenos Aires</span></a></li>
-                  <li><a href="#" name="ac-input-target5"><span class="tl"></span><span class="tr"></span><i class="material-icons">star</i><span>Conscripto <em>Bernar</em>di</span><span class="clase">Adrogué, Almirante Brown</span></a></li>
-                  <li><a href="#" name="ac-input-target6"><span class="tl"></span><span class="tr"></span><i class="material-icons">star</i><span>Diagonal Juan B. Toll y <em>Bernar</em>det</span><span class="clase">Adrogué, Almirante Brown</span></a></li>
-                  <li><a href="#" name="ac-input-target0"><span class="tl"></span><span class="tr"></span><i class="material-icons">star</i><span>Irigoyen, <em>Bernar</em>do De 272</span><span class="clase">Mis Direcciones</span></a></li>
-                  <li><a href="#" name="ac-input-target1"><span class="tl"></span><span class="tr"></span><i class="material-icons">star</i><span><em>Bernar</em>di, Conscripto</span><span class="clase">Ciudad Autónoma de Buenos Aires</span></a></li>
-                  <li><a href="#" name="ac-input-target2"><span class="tl"></span><span class="tr"></span><i class="material-icons">star</i><span>Irigoyen, <em>Bernar</em>do De</span><span class="clase">Ciudad Autónoma de Buenos Aires</span></a></li>
-                  <li><a href="#" name="ac-input-target3"><span class="tl"></span><span class="tr"></span><i class="material-icons">star</i><span>Leon, <em>Bernar</em>do De</span><span class="clase">Ciudad Autónoma de Buenos Aires</span></a></li>
-                </ul>
+            <div id="autocomplete-map__container"></div>
+            <div class="autocomplete__favs">
+              <div class="opciones_autocomplete hidden">
+                <small>Mis direcciones</small>
+                <div class="content">
+                  <ul class="options">
+                    <li><a href="#" name="ac-input-target0"><span class="tl"></span><span class="tr"></span><i class="material-icons">star</i><span>Irigoyen, <em>Bernar</em>do De 272</span><span class="clase">Mis Direcciones</span></a></li>
+                    <li><a href="#" name="ac-input-target1"><span class="tl"></span><span class="tr"></span><i class="material-icons">star</i><span><em>Bernar</em>di, Conscripto</span><span class="clase">Ciudad Autónoma de Buenos Aires</span></a></li>
+                    <li><a href="#" name="ac-input-target2"><span class="tl"></span><span class="tr"></span><i class="material-icons">star</i><span>Irigoyen, <em>Bernar</em>do De</span><span class="clase">Ciudad Autónoma de Buenos Aires</span></a></li>
+                    <li><a href="#" name="ac-input-target3"><span class="tl"></span><span class="tr"></span><i class="material-icons">star</i><span>Leon, <em>Bernar</em>do De</span><span class="clase">Ciudad Autónoma de Buenos Aires</span></a></li>
+                    <li><a href="#" name="ac-input-target4"><span class="tl"></span><span class="tr"></span><i class="material-icons">star</i><span>Velez, <em>Bernar</em>do, Dr.</span><span class="clase">Ciudad Autónoma de Buenos Aires</span></a></li>
+                    <li><a href="#" name="ac-input-target5"><span class="tl"></span><span class="tr"></span><i class="material-icons">star</i><span>Conscripto <em>Bernar</em>di</span><span class="clase">Adrogué, Almirante Brown</span></a></li>
+                    <li><a href="#" name="ac-input-target6"><span class="tl"></span><span class="tr"></span><i class="material-icons">star</i><span>Diagonal Juan B. Toll y <em>Bernar</em>det</span><span class="clase">Adrogué, Almirante Brown</span></a></li>
+                    <li><a href="#" name="ac-input-target0"><span class="tl"></span><span class="tr"></span><i class="material-icons">star</i><span>Irigoyen, <em>Bernar</em>do De 272</span><span class="clase">Mis Direcciones</span></a></li>
+                    <li><a href="#" name="ac-input-target1"><span class="tl"></span><span class="tr"></span><i class="material-icons">star</i><span><em>Bernar</em>di, Conscripto</span><span class="clase">Ciudad Autónoma de Buenos Aires</span></a></li>
+                    <li><a href="#" name="ac-input-target2"><span class="tl"></span><span class="tr"></span><i class="material-icons">star</i><span>Irigoyen, <em>Bernar</em>do De</span><span class="clase">Ciudad Autónoma de Buenos Aires</span></a></li>
+                    <li><a href="#" name="ac-input-target3"><span class="tl"></span><span class="tr"></span><i class="material-icons">star</i><span>Leon, <em>Bernar</em>do De</span><span class="clase">Ciudad Autónoma de Buenos Aires</span></a></li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -534,11 +537,11 @@
 
       <main class="mdl-layout__content">
         <section class="map-container">
-          <iframe class="img-rounded" src="http://epok.buenosaires.gob.ar/pub/mapa/usig/barrios/" name="Mapa de Obras y Desvíos" scrolling="no" frameborder="0"></iframe>
-          <button class="mdl-button mdl-js-button mdl-button--fab location-button active">
+          <div id="map-canvas"></div>
+          <button class="mdl-button mdl-js-button mdl-button--fab location-button">
             <i class="material-icons">my_location</i>
           </button>
-          <div class="locator show"></div>
+          <div class="locator"></div>
           <div class="map-marker hidden">
             <div class="leaflet-marker-pane">
               <img src="img/marker.svg" class="leaflet-marker-icon leaflet-zoom-animated leaflet-clickable" tabindex="0" width="50" height="55">
@@ -590,9 +593,8 @@
             <div id="autocomplete-from__container"></div>
             <div class="autocomplete__favs">
               <a class="autocomplete-from__gps"><i class="material-icons">my_location</i><span>Mi ubicación</span></a>
-              <hr>
-              <small>Mis direcciones</small>
-              <div id="ac-input-target" class="opciones_autocomplete">
+              <div class="opciones_autocomplete hidden">
+                <small>Mis direcciones</small>
                 <div class="content">
                   <ul class="options">
                     <li><a href="#" name="ac-input-target0"><span class="tl"></span><span class="tr"></span><i class="material-icons">star</i><span>Irigoyen, <em>Bernar</em>do De 272</span><span class="clase">Mis Direcciones</span></a></li>
@@ -629,9 +631,8 @@
             <div id="autocomplete-to__container"></div>
             <div class="autocomplete__favs">
               <a class="autocomplete-to__gps"><i class="material-icons">my_location</i><span>Mi ubicación</span></a>
-              <hr>
-              <small>Mis direcciones</small>
-              <div class="opciones_autocomplete">
+              <div class="opciones_autocomplete hidden">
+                <small>Mis direcciones</small>
                 <div class="content">
                   <ul class="options">
                     <li><a href="#" name="ac-input-target0"><span class="tl"></span><span class="tr"></span><i class="material-icons">star</i><span>Irigoyen, <em>Bernar</em>do De 272</span><span class="clase">Mis Direcciones</span></a></li>
@@ -780,44 +781,7 @@
             <span>Buscando recorridos</span>
           </div>
           <div class="results-items">
-            <!-- <div class="results__item open">
-              <header>
-                <div class="item__trip">
-                  <div class="train-icon" title="Ferrocarril Bartolomé Mitre">FCGBM</div>
-                  <i class="material-icons">chevron_right</i>
-                  <div class="bus-icon bus-icon__60"><div class="colors"></div></div>
-                  <i class="material-icons">chevron_right</i>
-                  <div class="subway-icon subway-icon__a"></div>
-                </div>
-                <div class="mdl-layout-spacer"></div>
-                <time>16 min</time>
-                <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
-                  <i class="material-icons">expand_more</i>
-                </button>
-              </header>
-              <div class="item__details">
-                <ul>
-                  <li>
-                    <i class="mdl-icon-toggle__label material-icons">directions_walk</i>
-                    <div>Caminar desde <strong>Echeverría 2500</strong> hasta <strong>Cabildo Av. y Echeverría</strong></div>
-                  </li>
-                  <li>
-                    <i class="mdl-icon-toggle__label material-icons">directions_bus</i>
-                    <div>Tomar el <strong>Colectivo 166</strong> y bajar en <strong>Álvarez, Julián y Drago, Luis María</strong></div>
-                  </li>
-                  <li>
-                    <i class="mdl-icon-toggle__label material-icons">directions_subway</i>
-                    <div>Tomar el <strong>subte línea D (en dirección a Leando N. Alem)</strong> en la estación <strong>Federico Lacroze</strong> en <strong>Guzmán Av. y Lacroze, Federico Av.</strong></div>
-                  </li>
-                </ul>
-                <div class="item__action">
-                  <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored btn-block btn-with-icon" href="#">
-                    <i class="mdl-icon-toggle__label material-icons">place</i>
-                    Ver recorrido en el mapa
-                  </a>
-                </div>
-              </div>
-            </div> -->
+
           </div>
         </section>
       </main>
@@ -826,6 +790,7 @@
     <script src="vendor/mdl/material.min.js"></script>
     <script src="vendor/jquery-1.11.3.min.js"></script>
     <script src="vendor/jquery.mobile-events.min.js"></script>
+    <script src="vendor/usig/usig.MapaInteractivo.min.js"></script>
     <script src="vendor/usig/usig.AutoCompleterFull.min.js"></script>
     <script src="vendor/usig/usig.Recorridos.min.js"></script>
     <script src="vendor/usig/usig.GeoCoder.min.js"></script>

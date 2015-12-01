@@ -299,8 +299,6 @@ label.basic-label {
 .trip-settings {
     height: 0px;
     overflow: hidden;
-    // transition: height 0.4s;
-    // transform: translateZ(0);
 
     &.open {
         height: 240px;
@@ -439,7 +437,6 @@ label.basic-label {
             margin-right: auto; 
             font-size: 1.1em;
             font-weight: 100;
-            // color: $border;
 
             .mdl-button {
                 margin-top: 32px;
@@ -468,9 +465,7 @@ label.basic-label {
 
     .results__item {
         background: $background;
-        border-bottom: 1px solid $border;
-        // transition: background 0.3s;
-        
+        border-bottom: 1px solid $border;        
 
         &.open {
             background: #FFF;
@@ -512,7 +507,6 @@ label.basic-label {
         }
         .item__details {
             max-height: 0;
-            // transition: max-height 0.4s;
             overflow: hidden;
 
             ul {
@@ -523,7 +517,7 @@ label.basic-label {
                 li {
                     display: flex;
                     flex-direction: row;
-                    align-items: center;
+                    align-items: top;
                     color: $gray;
                     padding: 12px 0;
                     position: relative;
@@ -550,27 +544,6 @@ label.basic-label {
                         span {
                             font-weight: bold;
                         }
-                    }
-
-                    &:not(:first-of-type):before {
-                        content: "more_vert";
-                        font-family: 'Material Icons';
-                        position: absolute;
-                        top: -12px;
-                        left: 8px;
-                        font-size: 16px;
-                        color: $border;
-                        
-                        font-weight: normal;
-                        font-style: normal;
-                        letter-spacing: normal;
-                        text-transform: none;
-                        display: inline-block;
-                        white-space: nowrap;
-                        word-wrap: normal;
-                        direction: ltr;
-                        text-rendering: optimizeLegibility;
-                        -webkit-font-smoothing: antialiased;
                     }
                 }
             }
@@ -612,7 +585,6 @@ label.basic-label {
     }
 }
 
-// .bus-icon,
 .pill {
     display: inline-block;
     width: 40px;
@@ -628,13 +600,11 @@ label.basic-label {
     box-shadow: 0 2px 2px rgba($black, 0.25);
     opacity: 0.85;
 
-    // .colors,
     .primero {
         height: 10px;
         margin-bottom: 1px;
         border-radius: 2px 5px 0 0;
 
-        // &:before,
         .segundo {
             content: " ";
             float: right;
@@ -647,7 +617,6 @@ label.basic-label {
 
 @import "bus_colors.scss";
 
-// .subway-icon,
 .circlePill {
     display: inline-block;
     width: 42px;
@@ -663,58 +632,28 @@ label.basic-label {
     box-sizing: border-box;
 }
 
-// .subway-icon__a,
 .subteA {
     background: #01b5e3;
-    // &:before {
-    //     content: "A"
-    // }
 }
-// .subway-icon__b,
 .subteB {
     background: #e55757;
-    // &:before {
-    //     content: "B"
-    // }
 }
-// .subway-icon__c,
 .subteC {
     background: #3488d2;
-    // &:before {
-    //     content: "C"
-    // }
 }
-// .subway-icon__d,
 .subteD {
     background: #3bc13f;
-    // &:before {
-    //     content: "D"
-    // }
 }
-// .subway-icon__e,
 .subteE {
     background: #a238cc;
-    // &:before {
-    //     content: "E"
-    // }
 }
-// .subway-icon__h,
 .subteH {
     background: #e8d240;
-    color: #333;
-    // &:before {
-    //     content: "H"
-    // }
 }
-// .subway-icon__p,
 .subteP {
     background: #f7b55a;
-    // &:before {
-    //     content: "P"
-    // }
 }
 
-// .train-icon,
 .trenpill {
     display: inline-block;
     width: 70px;
@@ -732,7 +671,6 @@ label.basic-label {
     opacity: 0.90;
     font-style: italic;
 
-    // &:before,
     .primero {
         content: "";
         display: block;
@@ -752,7 +690,6 @@ label.basic-label {
     top: 0;
     left: 0;
     z-index: 10;
-    // transition: transform 0.3s;
     box-shadow: 0 0px 12px rgba(0,0,0,0.5);
     transform: translate3d(105%,0,0);
 }
@@ -826,14 +763,14 @@ body.show-autocomplete-to #cl-autocomplete {
         }
     }
 
-    hr {
-        margin: 0;
-    }
+    .opciones_autocomplete {
+        border-top: 1px solid $border;
 
-    small {
-        display: block;
-        padding: 12px 0 0 16px;
-        color: $gray;
+        small {
+            display: block;
+            padding: 12px 0 0 16px;
+            color: $gray;
+        }
     }
     
     ul {
@@ -916,9 +853,7 @@ body.show-autocomplete-to #cl-autocomplete {
 
     .message {
         padding: 16px;
-        // background: lighten($background, 3%);
         border-radius: 3px;
-        // text-align: center;
     }
 }
 
@@ -1150,6 +1085,12 @@ body.show-map #cl-map {
     }
     .mdl-layout__content {
         height: calc(100% - 56px);
+
+        #map-canvas {
+            position: relative;
+            height: 100%;
+            width: 100%;
+        }
     }
 }
 
@@ -1323,10 +1264,6 @@ body.show-map #cl-map {
             box-shadow: none;
             box-sizing: border-box;
 
-            &::-webkit-input-placeholder {
-               // color: $gray;
-            }
-
             &:focus {
                 outline: none;
             }
@@ -1429,9 +1366,7 @@ body.show-map #cl-map {
 }
 
 /* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
+   Media for small devices
    ========================================================================== */
 
 @media only screen and (max-height: 480px) and (orientation: portrait) {
@@ -1457,11 +1392,4 @@ body.show-map #cl-map {
             margin-top: 0;
         }
     }
-}
-
-@media print,
-       (-webkit-min-device-pixel-ratio: 1.25),
-       (min-resolution: 1.25dppx),
-       (min-resolution: 120dpi) {
-    /* Style adjustments for high resolution devices */
 }

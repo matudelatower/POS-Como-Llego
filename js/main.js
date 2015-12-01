@@ -4,7 +4,7 @@
 /* ==================================== */
 
 var templates = {
-    result: '<div class="results__item" data-id="{id}"><header><div class="item__trip"> {description} </div><div class="mdl-layout-spacer"></div><time>{time} min</time><button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored" data-upgraded=",MaterialButton"><i class="material-icons">expand_more</i></button></header><div class="item__details"><ul> <span>Cargando detalles...</span> </ul><div class="item__action"><a class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored btn-block btn-with-icon" href="#" data-upgraded=",MaterialButton"><i class="mdl-icon-toggle__label material-icons">place</i> Ver recorrido en el mapa </a></div></div></div>'
+    result: '<div class="results__item" data-id="{id}"><header><div class="item__trip"> {description} </div><div class="mdl-layout-spacer"></div><time>{time} min</time><button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored" data-upgraded=",MaterialButton"><i class="material-icons">expand_more</i></button></header><div class="item__details"><ul> <span>Cargando detalles...</span> </ul><div class="item__action"><a class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored btn-block btn-with-icon" data-id="{id}"><i class="mdl-icon-toggle__label material-icons">place</i> Ver recorrido en el mapa </a></div></div></div>'
 }
 
 /* ==================================== */
@@ -56,7 +56,7 @@ var renderName = function(str){
 }
 
 var autocompleter = {
-    setup : function(input){
+    setup: function(input){
         return new usig.AutoCompleter('autocomplete-'+ input, {
             skin: 'custom',
             idOptionsDiv: 'autocomplete-'+ input +'__container',
@@ -88,6 +88,24 @@ var autocompleter = {
 autocompleter.from = autocompleter.setup('from');
 autocompleter.to = autocompleter.setup('to');
 
+// Map auto completer
+
+autocompleter.map = new usig.AutoCompleter('autocomplete-map', {
+    skin: 'custom',
+    idOptionsDiv: 'autocomplete-map__container',
+    hideOnBlur: false,
+    afterSuggest: function(){
+        ui.autocompleter.toggleResults('map');
+    },
+    onInputChange: function(){
+        ui.autocompleter.toggleResults('map');
+    },
+    afterSelection: function(suggest) {
+        // Shows fake marker
+        $('.map-marker').removeClass('hidden');
+        $('#cl-map').removeClass('show-search');
+    }
+});
 
 /* ==================================== */
 /* Geolocation
@@ -140,7 +158,7 @@ geolocation.set('from');
 /* ==================================== */
 
 var trip = {
-    calculate : function(){
+    calculate: function(){
         if (trip.from && trip.to) {
             $('.results').removeClass('blank').addClass('loading');
 
@@ -159,13 +177,13 @@ var trip = {
                 options
             );
         } else {
-            console.log('Ingrese origen y destino del recorrido.');
+            // console.log('Ingrese origen y destino del recorrido.');
         }
     },
-    _renderError : function(){
+    _renderError: function(){
         console.log('Se produjo un error el buscar el recorrido.');
     },
-    _renderResults : function (results) {
+    _renderResults: function (results) {
 
         trip.results = results;
         $('.results .results__item').remove();
@@ -205,12 +223,38 @@ $('.results').on('tap', '.results__item:not([data-loaded]) header', function(){
 });
 
 /* ==================================== */
+/* Map
+/* ==================================== */
+
+var map = {
+    currentTrip: false,
+    _object: new usig.MapaInteractivo('map-canvas', {
+        rootUrl: '../vendor/usig/',
+        includePanZoomBar: false,
+        includeToolbar: false
+    }),
+    showTrip: function(id){
+        map.eraseTrip();
+        map._object.mostrarRecorrido( trip.results[id] );
+        map.currentTrip = id;
+    },
+    eraseTrip: function(){
+        if(map.currentTrip !== false){
+            map._object.borrarRecorrido( trip.results[map.currentTrip] );
+            map.currentTrip = false;
+        }
+    }
+}
+
+
+/* ==================================== */
 /* Loading
 /* ==================================== */
 
 $(window).load( function(){
     $('#cl-loading').addClass('hidden');
 });
+
 
 /* ==================================== */
 /* Onboard
@@ -221,6 +265,7 @@ $('#cl-onboard a').on('tap', function(event){
     $('#cl-form').removeClass('hidden');
     event.preventDefault();
 });
+
 
 /* ==================================== */
 /* Form and Results
@@ -250,6 +295,14 @@ $('.results').on('tap', 'header', function(event){
     $(this).parent().toggleClass('open');
     event.preventDefault();
 });
+
+// Results show / hide toggle
+$('.results').on('tap', '.item__action a', function(event){
+    map.showTrip( $(this).data('id') );
+    $('body').addClass('show-map');
+    event.preventDefault();
+});
+
 
 /* ==================================== */
 /* Form Autocomplete
@@ -305,6 +358,7 @@ $('.autocomplete-to__gps').on('tap', function(event){
 $('.autocomplete-from .location-autocomplete li a, .autocomplete-to .location-autocomplete li a').on('click', function(event){
     event.preventDefault();
 });
+
 
 /* ==================================== */
 /* Favourites
@@ -367,6 +421,7 @@ $('.fav-list li a, .history-list li a').on('tap', function(event){
     event.preventDefault();
 });
 
+
 /* ==================================== */
 /* History
 /* ==================================== */
@@ -393,6 +448,7 @@ $('.js-history-clear').on('tap', function(event){
     event.preventDefault();
 });
 
+
 /* ==================================== */
 /* Info page
 /* ==================================== */
@@ -408,12 +464,13 @@ $('.js-info_close').on('tap', function(event){
     event.preventDefault();
 });
 
+
 /* ==================================== */
 /* Map
 /* ==================================== */
 
 // Open map page
-$('body').on('tap', '.js-map_trigger, .item__action a', function(event){
+$('body').on('tap', '.js-map_trigger', function(event){
     $('body').addClass('show-map');
     event.preventDefault();
 });
