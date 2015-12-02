@@ -69,15 +69,19 @@ var autocompleter = {
             },
             afterSelection: function(suggest) {
                 if (suggest instanceof usig.Direccion || suggest instanceof usig.inventario.Objeto) {
-                    trip[input] = suggest;
-                    ui.autocompleter.select(suggest, input);
                 }else{
                     console.log('Something went wrong with the selected place');
                 }
             },
+            beforeGeoCoding: function(){
+                console.log('start geocoding');
+            },
             afterGeoCoding: function(geoPoint) {
+                console.log(geoPoint)
                 if (geoPoint instanceof usig.Punto && trip[input] instanceof usig.Direccion) {
+                    trip[input] = suggest;
                     trip[input].setCoordenadas(geoPoint);
+                    ui.autocompleter.select(suggest, input);
                     trip.calculate();
                 }
             }
@@ -229,7 +233,7 @@ $('.results').on('tap', '.results__item:not([data-loaded]) header', function(){
 var map = {
     currentTrip: false,
     _object: new usig.MapaInteractivo('map-canvas', {
-        rootUrl: '../vendor/usig/',
+        rootUrl: 'vendor/usig/',
         includePanZoomBar: false,
         includeToolbar: false
     }),
@@ -416,7 +420,7 @@ $('.js-fav-clear').on('tap', function(event){
 });
 
 // Paint hover background when menu is open  + history
-$('.fav-list li a, .history-list li a').on('tap', function(event){
+$('.fav-list li a, .history-list li a').on('click', function(event){
     $(this).focus();
     event.preventDefault();
 });
